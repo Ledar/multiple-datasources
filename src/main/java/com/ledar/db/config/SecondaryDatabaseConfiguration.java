@@ -1,6 +1,5 @@
 package com.ledar.db.config;
 
-import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -37,7 +36,7 @@ public class SecondaryDatabaseConfiguration {
 
     @Bean
     public DataSource secondaryDataSource() {
-        return secondaryDataSourceProperties().initializeDataSourceBuilder().type(HikariDataSource.class).build();
+        return secondaryDataSourceProperties().initializeDataSourceBuilder().build();
     }
 
     @Bean(name = "secondaryEntityManagerFactory")
