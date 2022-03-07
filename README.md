@@ -6,11 +6,11 @@ spring boot with multiple datasources.
 
 ## Project Structure
 
-####application-dev:
+### application-dev:
 
 config two datasources(primary and secondary)
 
-####config:
+### config:
 
 JpaHibernateProperties.java to get JPA and Hibernate properties from application.yml
 
@@ -18,6 +18,6 @@ PrimaryDatabaseConfiguration.java for primary datasource
 
 SecondaryDatabaseConfiguration.java for secondary datasource
 
-####domain and repository:
+### domain and repository:
 
 place into separate package, eg: domain.primary, domain.secondary, repository.primary, repository.primary, repository.secondary
