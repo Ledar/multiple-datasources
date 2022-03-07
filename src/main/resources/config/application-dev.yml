@@ -31,13 +31,22 @@ spring:
     serialization:
       indent-output: true
   datasource:
-    type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:h2:file:./build/h2db/db/db;DB_CLOSE_DELAY=-1
-    username: db
-    password:
-    hikari:
-      poolName: Hikari
-      auto-commit: false
+    primary:
+      type: com.zaxxer.hikari.HikariDataSource
+      url: jdbc:h2:file:./build/h2db/db/primarydb;DB_CLOSE_DELAY=-1
+      username: db
+      password:
+      hikari:
+        poolName: Hikari-primary
+        auto-commit: false
+    secondary:
+      type: com.zaxxer.hikari.HikariDataSource
+      url: jdbc:h2:file:./build/h2db/db/secondarydb;DB_CLOSE_DELAY=-1
+      username: db
+      password:
+      hikari:
+        poolName: Hikari-secondary
+        auto-commit: false
   h2:
     console:
       # disable spring boot built-in h2-console since we start it manually with correct configuration
@@ -46,7 +55,7 @@ spring:
     database-platform: tech.jhipster.domain.util.FixedH2Dialect
   liquibase:
     # Remove 'faker' if you do not want the sample data to be loaded automatically
-    contexts: dev, faker
+    contexts: dev
   mail:
     host: localhost
     port: 25

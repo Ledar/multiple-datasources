@@ -1,7 +1,7 @@
 package com.ledar.db.service.mapper;
 
-import com.ledar.db.domain.Authority;
-import com.ledar.db.domain.User;
+import com.ledar.db.domain.primary.Authority;
+import com.ledar.db.domain.primary.User;
 import com.ledar.db.service.dto.AdminUserDTO;
 import com.ledar.db.service.dto.UserDTO;
 import java.util.*;

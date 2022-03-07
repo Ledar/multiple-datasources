@@ -1,6 +1,6 @@
 package com.ledar.db.service;
 
-import com.ledar.db.domain.User;
+import com.ledar.db.domain.primary.User;
 import java.nio.charset.StandardCharsets;
 import java.util.Locale;
 import javax.mail.MessagingException;

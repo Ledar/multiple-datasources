@@ -4,8 +4,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 import com.ledar.db.IntegrationTest;
-import com.ledar.db.domain.User;
-import com.ledar.db.repository.UserRepository;
+import com.ledar.db.domain.primary.User;
+import com.ledar.db.repository.primary.UserRepository;
 import java.util.Locale;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.BeforeEach;

@@ -4,10 +4,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
 import com.ledar.db.IntegrationTest;
-import com.ledar.db.config.Constants;
-import com.ledar.db.domain.User;
-import com.ledar.db.repository.UserRepository;
-import com.ledar.db.service.dto.AdminUserDTO;
+import com.ledar.db.domain.primary.User;
+import com.ledar.db.repository.primary.UserRepository;
+
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -20,8 +19,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.data.auditing.AuditingHandler;
 import org.springframework.data.auditing.DateTimeProvider;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.transaction.annotation.Transactional;
 import tech.jhipster.security.RandomUtil;
 

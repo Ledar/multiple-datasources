@@ -7,12 +7,11 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 import com.ledar.db.IntegrationTest;
-import com.ledar.db.domain.Authority;
-import com.ledar.db.domain.User;
-import com.ledar.db.repository.UserRepository;
+import com.ledar.db.domain.primary.Authority;
+import com.ledar.db.domain.primary.User;
+import com.ledar.db.repository.primary.UserRepository;
 import com.ledar.db.security.AuthoritiesConstants;
 import com.ledar.db.service.dto.AdminUserDTO;
-import com.ledar.db.service.dto.UserDTO;
 import com.ledar.db.service.mapper.UserMapper;
 import com.ledar.db.web.rest.vm.ManagedUserVM;
 import java.time.Instant;

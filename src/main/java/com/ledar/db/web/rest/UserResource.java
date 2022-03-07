@@ -1,8 +1,8 @@
 package com.ledar.db.web.rest;
 
 import com.ledar.db.config.Constants;
-import com.ledar.db.domain.User;
-import com.ledar.db.repository.UserRepository;
+import com.ledar.db.domain.primary.User;
+import com.ledar.db.repository.primary.UserRepository;
 import com.ledar.db.security.AuthoritiesConstants;
 import com.ledar.db.service.MailService;
 import com.ledar.db.service.UserService;

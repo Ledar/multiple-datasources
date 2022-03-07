@@ -6,8 +6,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 import com.ledar.db.IntegrationTest;
-import com.ledar.db.domain.User;
-import com.ledar.db.repository.UserRepository;
+import com.ledar.db.domain.primary.User;
+import com.ledar.db.repository.primary.UserRepository;
 import com.ledar.db.security.AuthoritiesConstants;
 import javax.persistence.EntityManager;
 import org.junit.jupiter.api.BeforeEach;

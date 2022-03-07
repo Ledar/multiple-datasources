@@ -7,14 +7,13 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import com.ledar.db.IntegrationTest;
 import com.ledar.db.config.Constants;
-import com.ledar.db.domain.User;
-import com.ledar.db.repository.AuthorityRepository;
-import com.ledar.db.repository.UserRepository;
+import com.ledar.db.domain.primary.User;
+import com.ledar.db.repository.primary.AuthorityRepository;
+import com.ledar.db.repository.primary.UserRepository;
 import com.ledar.db.security.AuthoritiesConstants;
 import com.ledar.db.service.UserService;
 import com.ledar.db.service.dto.AdminUserDTO;
 import com.ledar.db.service.dto.PasswordChangeDTO;
-import com.ledar.db.service.dto.UserDTO;
 import com.ledar.db.web.rest.vm.KeyAndPasswordVM;
 import com.ledar.db.web.rest.vm.ManagedUserVM;
 import java.time.Instant;

@@ -1,6 +1,13 @@
 package com.ledar.db.config;
 
 import java.time.Duration;
+
+import com.ledar.db.domain.primary.Authority;
+import com.ledar.db.domain.primary.User;
+import com.ledar.db.domain.secondary.SecAuthority;
+import com.ledar.db.domain.secondary.SecUser;
+import com.ledar.db.repository.primary.UserRepository;
+import com.ledar.db.repository.secondary.SecUserRepository;
 import org.ehcache.config.builders.*;
 import org.ehcache.jsr107.Eh107Configuration;
 import org.hibernate.cache.jcache.ConfigSettings;
@@ -43,11 +50,17 @@ public class CacheConfiguration {
     @Bean
     public JCacheManagerCustomizer cacheManagerCustomizer() {
         return cm -> {
-            createCache(cm, com.ledar.db.repository.UserRepository.USERS_BY_LOGIN_CACHE);
-            createCache(cm, com.ledar.db.repository.UserRepository.USERS_BY_EMAIL_CACHE);
-            createCache(cm, com.ledar.db.domain.User.class.getName());
-            createCache(cm, com.ledar.db.domain.Authority.class.getName());
-            createCache(cm, com.ledar.db.domain.User.class.getName() + ".authorities");
+            createCache(cm, UserRepository.USERS_BY_LOGIN_CACHE);
+            createCache(cm, UserRepository.USERS_BY_EMAIL_CACHE);
+            createCache(cm, User.class.getName());
+            createCache(cm, Authority.class.getName());
+            createCache(cm, User.class.getName() + ".authorities");
+
+            createCache(cm, SecUserRepository.USERS_BY_LOGIN_CACHE);
+            createCache(cm, SecUserRepository.USERS_BY_EMAIL_CACHE);
+            createCache(cm, SecUser.class.getName());
+            createCache(cm, SecAuthority.class.getName());
+            createCache(cm, SecUser.class.getName() + ".authorities");
             // jhipster-needle-ehcache-add-entry
         };
     }

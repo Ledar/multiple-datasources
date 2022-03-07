@@ -1,8 +1,8 @@
 package com.ledar.db.service.dto;
 
 import com.ledar.db.config.Constants;
-import com.ledar.db.domain.Authority;
-import com.ledar.db.domain.User;
+import com.ledar.db.domain.primary.Authority;
+import com.ledar.db.domain.primary.User;
 import java.time.Instant;
 import java.util.Set;
 import java.util.stream.Collectors;

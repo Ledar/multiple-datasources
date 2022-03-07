@@ -1,6 +1,6 @@
 package com.ledar.db.service.dto;
 
-import com.ledar.db.domain.User;
+import com.ledar.db.domain.primary.User;
 
 /**
  * A DTO representing a user, with only the public attributes.

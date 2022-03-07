@@ -1,6 +1,6 @@
-package com.ledar.db.repository;
+package com.ledar.db.repository.primary;
 
-import com.ledar.db.domain.Authority;
+import com.ledar.db.domain.primary.Authority;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

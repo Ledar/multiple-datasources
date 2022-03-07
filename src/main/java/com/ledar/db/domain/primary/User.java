@@ -1,4 +1,4 @@
-package com.ledar.db.domain;
+package com.ledar.db.domain.primary;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.ledar.db.config.Constants;
@@ -12,6 +12,8 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+
+import com.ledar.db.domain.AbstractAuditingEntity;
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.annotations.BatchSize;
 import org.hibernate.annotations.Cache;

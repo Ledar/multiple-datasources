@@ -10,8 +10,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.ledar.db.IntegrationTest;
-import com.ledar.db.domain.User;
-import com.ledar.db.repository.UserRepository;
+import com.ledar.db.domain.primary.User;
+import com.ledar.db.repository.primary.UserRepository;
 import com.ledar.db.web.rest.vm.LoginVM;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

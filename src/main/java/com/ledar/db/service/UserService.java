@@ -1,10 +1,10 @@
 package com.ledar.db.service;
 
 import com.ledar.db.config.Constants;
-import com.ledar.db.domain.Authority;
-import com.ledar.db.domain.User;
-import com.ledar.db.repository.AuthorityRepository;
-import com.ledar.db.repository.UserRepository;
+import com.ledar.db.domain.primary.Authority;
+import com.ledar.db.domain.primary.User;
+import com.ledar.db.repository.primary.AuthorityRepository;
+import com.ledar.db.repository.primary.UserRepository;
 import com.ledar.db.security.AuthoritiesConstants;
 import com.ledar.db.security.SecurityUtils;
 import com.ledar.db.service.dto.AdminUserDTO;

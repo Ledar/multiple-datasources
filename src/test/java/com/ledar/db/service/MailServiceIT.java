@@ -6,7 +6,7 @@ import static org.mockito.Mockito.*;
 
 import com.ledar.db.IntegrationTest;
 import com.ledar.db.config.Constants;
-import com.ledar.db.domain.User;
+import com.ledar.db.domain.primary.User;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;

@@ -1,6 +1,6 @@
-package com.ledar.db.repository;
+package com.ledar.db.repository.primary;
 
-import com.ledar.db.domain.User;
+import com.ledar.db.domain.primary.User;
 import java.time.Instant;
 import java.util.List;
 import java.util.Optional;

@@ -1,4 +1,4 @@
-package com.ledar.db.domain;
+package com.ledar.db.domain.primary;
 
 import java.io.Serializable;
 import java.util.Objects;
