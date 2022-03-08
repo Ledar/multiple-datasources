@@ -32,21 +32,17 @@ spring:
       indent-output: true
   datasource:
     primary:
-      type: com.zaxxer.hikari.HikariDataSource
-      url: jdbc:h2:file:./build/h2db/db/primarydb;DB_CLOSE_DELAY=-1
+      jdbc-url: jdbc:h2:file:./build/h2db/db/primarydb;DB_CLOSE_DELAY=-1
       username: db
       password:
-      hikari:
-        poolName: Hikari-primary
-        auto-commit: false
+      poolName: Hikari-primary
+      auto-commit: false
     secondary:
-      type: com.zaxxer.hikari.HikariDataSource
-      url: jdbc:h2:file:./build/h2db/db/secondarydb;DB_CLOSE_DELAY=-1
+      jdbc-url: jdbc:h2:file:./build/h2db/db/secondarydb;DB_CLOSE_DELAY=-1
       username: db
       password:
-      hikari:
-        poolName: Hikari-secondary
-        auto-commit: false
+      poolName: Hikari-secondary
+      auto-commit: false
   h2:
     console:
       # disable spring boot built-in h2-console since we start it manually with correct configuration

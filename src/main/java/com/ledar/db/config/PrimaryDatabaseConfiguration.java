@@ -1,11 +1,10 @@
 package com.ledar.db.config;
 
-import java.sql.SQLException;
-
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
@@ -24,6 +23,7 @@ import tech.jhipster.config.h2.H2ConfigurationHelper;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
+import java.sql.SQLException;
 
 @Configuration
 @EnableTransactionManagement
@@ -44,18 +44,18 @@ public class PrimaryDatabaseConfiguration {
 
     @Bean
     @Primary
-    @ConfigurationProperties("spring.datasource.primary")
-    public DataSourceProperties primaryDataSourceProperties() {
-        return new DataSourceProperties();
+    @ConfigurationProperties(prefix = "spring.datasource.primary")
+    public HikariConfig primaryHikariConfig() {
+        return new HikariConfig();
     }
 
     @Bean
     @Primary
     public DataSource primaryDataSource() {
-        return primaryDataSourceProperties().initializeDataSourceBuilder().build();
+        return new HikariDataSource(primaryHikariConfig());
     }
 
-    @Bean(name = "primaryEntityManagerFactory")
+    @Bean
     @Primary
     public LocalContainerEntityManagerFactoryBean primaryEntityManagerFactory(EntityManagerFactoryBuilder builder) {
         return builder
@@ -67,8 +67,7 @@ public class PrimaryDatabaseConfiguration {
 
     @Bean
     @Primary
-    public PlatformTransactionManager primaryTransactionManager(
-        final @Qualifier("primaryEntityManagerFactory") EntityManagerFactory primaryEntityManagerFactory) {
+    public PlatformTransactionManager primaryTransactionManager(@Qualifier("primaryEntityManagerFactory") EntityManagerFactory primaryEntityManagerFactory) {
         return new JpaTransactionManager(primaryEntityManagerFactory);
     }
 

@@ -8,6 +8,9 @@ import com.ledar.db.repository.secondary.SecAuthorityRepository;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.sql.DataSource;
+import java.sql.SQLException;
+
 @RestController
 @RequestMapping("/api")
 public class TestController {
@@ -15,15 +18,20 @@ public class TestController {
     private final UserRepository userRepository;
     private final AuthorityRepository authorityRepository;
     private final SecAuthorityRepository secAuthorityRepository;
+    private final DataSource dataSource;
 
-    public TestController(UserRepository userRepository, AuthorityRepository authorityRepository, SecAuthorityRepository secAuthorityRepository) {
+    public TestController(UserRepository userRepository, AuthorityRepository authorityRepository, SecAuthorityRepository secAuthorityRepository, DataSource dataSource) {
         this.userRepository = userRepository;
         this.authorityRepository = authorityRepository;
         this.secAuthorityRepository = secAuthorityRepository;
+        this.dataSource = dataSource;
     }
 
     @RequestMapping("/test")
-    public String test() {
+    public String test() throws SQLException {
+
+        dataSource.getLoginTimeout();
+
         Authority authority = new Authority();
         authority.setName("ROLE_1");
         authorityRepository.save(authority);
